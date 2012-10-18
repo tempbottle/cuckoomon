@@ -71,6 +71,11 @@ DWORD random()
     return pRtlGenRandom(&ret, sizeof(ret)) ? ret : rand();
 }
 
+DWORD randint(DWORD min, DWORD max)
+{
+    return min + (random() % (max - min + 1));
+}
+
 int wcsnicmp(const wchar_t *a, const wchar_t *b, int len)
 {
     while (len-- != 0) {
